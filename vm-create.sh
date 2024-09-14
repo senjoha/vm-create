@@ -30,7 +30,7 @@ echo "Identityfile ~/.ssh/home" >> ~/.ssh/new
 ansible-playbook ~/Ansible/initial.yml -i ./new
 
 # create prometheus config file
-ssh -l root prometheus echo '[{"labels": {"job": "node"}, "targets": ["$FULLNAME:9100"]}]' > /etc/prometheus/generated/$FULLNAME.json
+echo '[{"labels": {"job": "node"}, "targets": ["$FULLNAME:9100"]}]' | ssh prometheus -l root -T "cat > /etc/prometheus/generated/$FULLNAME.json"
 
 # remove created ssh-config
 rm ~/.ssh/new
