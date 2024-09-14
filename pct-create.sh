@@ -1,6 +1,6 @@
 #!/bin/bash
-VMNAME=$2
-VMID=$1
+VMNAME=$1
+VMID=$2
 TEMPLATE=local:vztmpl/debian-12-standard_12.2-1_amd64.tar.zst
 
 pvesm alloc local-lvm $VMID vm-$VMID-disk-0 8G
