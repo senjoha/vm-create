@@ -20,11 +20,11 @@ echo "[new]" > ./new
 echo 192.168.178$TMP_VMID >> ./new
 
 # add new host to temporary ssh-config
-touch ~/.ssh/new/new
-echo "Host $VMID" >> ~/.ssh/new/new
-echo "Hostname 192.168.178.$TMP_VMID >> ~/.ssh/new/new
-echo "User root" >> ~/.ssh/new/new
-echo "Identityfile ~/.ssh/home" >> ~/.ssh/new/new
+touch ~/.ssh/new
+echo "Host $VMID" >> ~/.ssh/new
+echo "Hostname 192.168.178.$TMP_VMID >> ~/.ssh/new
+echo "User root" >> ~/.ssh/new
+echo "Identityfile ~/.ssh/home" >> ~/.ssh/new
 
 # run initial ansible-playbook (other repo)
 ansible-playbook ~/Ansible/initial.yml -i ./new
@@ -33,7 +33,7 @@ ansible-playbook ~/Ansible/initial.yml -i ./new
 ssh -l root prometheus echo '[{"labels": {"job": "node"}, "targets": ["$FULLNAME:9100"]}]' > /etc/prometheus/generated/$FULLNAME.json
 
 # remove created ssh-config
-rm ~/.ssh/new/new
+rm ~/.ssh/new
 
 # remove ansible hosts file
 rm ./new
