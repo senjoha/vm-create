@@ -9,7 +9,7 @@ VMID=$(( $TMP_VMID + 100 ))
 # create real container
 # see pct-create.sh
 # execute pct-create on pve host
-ssh -l root homie "/root/vm-create/pct_create.sh $VMNAME $VMID
+ssh -l root homie "/root/vm-create/pct-create.sh $VMNAME $VMID
 
 # start container
 ssh -l root homie "pct start $VMID"
