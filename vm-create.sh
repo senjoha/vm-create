@@ -22,7 +22,7 @@ echo 192.168.178.$TMP_VMID >> ./new
 # add new host to temporary ssh-config
 touch ~/.ssh/new
 echo "Host $VMID" >> ~/.ssh/new
-echo "Hostname 192.168.178.$TMP_VMID" >> ~/.ssh/new
+echo "Hostname 192.168.178.$VMID" >> ~/.ssh/new
 echo "User root" >> ~/.ssh/new
 echo "Identityfile ~/.ssh/home" >> ~/.ssh/new
 
