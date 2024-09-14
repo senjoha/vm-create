@@ -26,6 +26,9 @@ echo "Hostname 192.168.178.$VMID" >> ~/.ssh/new
 echo "User root" >> ~/.ssh/new
 echo "Identityfile ~/.ssh/home" >> ~/.ssh/new
 
+# sleep for 5 seconds to start vm and get interface up 
+sleep 5
+
 # run initial ansible-playbook (other repo)
 ansible-playbook ~/Ansible/initial.yml -i ./new
 
