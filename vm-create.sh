@@ -41,6 +41,12 @@ rm ~/.ssh/new
 # remove ansible hosts file
 rm ./new
 
+# unset variables
+unset VMNAME
+unset FULLNAME
+unset TMP_VMID
+unset VMID
+
 # notify of finished
 curl -d "vm creation is done. Please check!" https://ntfy.iede.senjoha.org/ansible
 echo "vm creation is done. Please check!"
