@@ -17,7 +17,7 @@ ssh -l root homie "pct start $VMID"
 # create ansible-hosts-file
 touch ./new
 echo "[new]" > ./new
-echo $FULLNAME >> ./new
+echo 192.168.178$TMP-VMID >> ./new
 
 # add new host to temporary ssh-config
 touch ~/.ssh/new/new
