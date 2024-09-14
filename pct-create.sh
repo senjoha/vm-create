@@ -20,4 +20,4 @@ pct create $VMID $TEMPLATE \
     -swap 0 \
     -timezone Europe/Berlin \
     -unprivileged 1 \
-    -ssh-public-keys /root/root-key.pub
+    -ssh-public-keys /root/vm-create/root-key.pub
