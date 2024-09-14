@@ -39,5 +39,5 @@ rm ~/.ssh/new/new
 rm ./new
 
 # notify of finished
-curl -d "vm creation is done. Please check!" ntfy.iede.senjoha.org/ansible
+curl -d "vm creation is done. Please check!" https://ntfy.iede.senjoha.org/ansible
 echo "vm creation is done. Please check!"
