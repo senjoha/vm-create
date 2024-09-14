@@ -13,7 +13,7 @@ pct create $VMID $TEMPLATE \
     -features nesting=1,keyctl=1 \
     -hostname $VMNAME \
     -memory 2048 \
-    -net0 name=eth0,bridge=vmbr0,firewall=1,ip=dhcp,ip6=auto \
+    -net0 name=eth0,bridge=vmbr0,firewall=1,gw=192.168.178.1,ip=192.168.178.$VMID/24,ip6=auto \
     -ostype debian \
     -rootfs volume=local-lvm:vm-$VMID-disk-0,size=8G \
     -storage local-lvm \
