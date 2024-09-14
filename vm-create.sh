@@ -35,6 +35,9 @@ ssh -l root prometheus echo '[{"labels": {"job": "node"}, "targets": ["$FULLNAME
 # remove created ssh-config
 rm ~/.ssh/new/new
 
+# remove ansible hosts file
+rm ./new
+
 # notify of finished
 curl -d "vm creation is done. Please check!" ntfy.iede.senjoha.org/ansible
 echo "vm creation is done. Please check!"
