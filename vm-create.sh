@@ -9,7 +9,7 @@ VMID=$(( $TMP_VMID + 100 ))
 # create real container
 # see pct-create.sh
 # execute pct-create on pve host
-ssh -l root homie "/root/vm-create/pct-create.sh $VMNAME $VMID
+ssh -l root homie "/root/vm-create/pct-create.sh $VMNAME $VMID"
 
 # start container
 ssh -l root homie "pct start $VMID"
@@ -17,12 +17,12 @@ ssh -l root homie "pct start $VMID"
 # create ansible-hosts-file
 touch ./new
 echo "[new]" > ./new
-echo 192.168.178$TMP_VMID >> ./new
+echo 192.168.178.$TMP_VMID >> ./new
 
 # add new host to temporary ssh-config
 touch ~/.ssh/new
 echo "Host $VMID" >> ~/.ssh/new
-echo "Hostname 192.168.178.$TMP_VMID >> ~/.ssh/new
+echo "Hostname 192.168.178.$TMP_VMID" >> ~/.ssh/new
 echo "User root" >> ~/.ssh/new
 echo "Identityfile ~/.ssh/home" >> ~/.ssh/new
 
