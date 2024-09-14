@@ -19,5 +19,5 @@ pct create $VMID $TEMPLATE \
     -storage local-lvm \
     -swap 0 \
     -timezone Europe/Berlin \
-    -unprivileged 1
+    -unprivileged 1 \
     -ssh-public-keys /root/root-key.pub
