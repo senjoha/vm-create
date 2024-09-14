@@ -17,11 +17,11 @@ ssh -l root homie "pct start $VMID"
 # create ansible-hosts-file
 touch ./new
 echo "[new]" > ./new
-echo 192.168.178.$VMID >> ./new
+echo $VMNAME >> ./new
 
 # add new host to temporary ssh-config
 touch ~/.ssh/new
-echo "Host $VMID" >> ~/.ssh/new
+echo "Host $VMNAME" >> ~/.ssh/new
 echo "Hostname 192.168.178.$VMID" >> ~/.ssh/new
 echo "User root" >> ~/.ssh/new
 echo "Identityfile ~/.ssh/home" >> ~/.ssh/new
