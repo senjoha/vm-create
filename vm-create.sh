@@ -33,7 +33,8 @@ sleep 5
 ansible-playbook ~/Ansible/initial.yml -i ./new
 
 # create prometheus config file
-echo '[{"labels": {"job": "node"}, "targets": ["$FULLNAME:9100"]}]' | ssh prometheus -l root -T "cat > /etc/prometheus/generated/$FULLNAME.json"
+#echo '[{"labels": {"job": "node"}, "targets": ["$FULLNAME:9100"]}]' | ssh prometheus -l root -T "cat > /etc/prometheus/generated/$FULLNAME.json"
+ansible-playbook ~/Ansible/node-exporter.yml --extra-vars "FULLNAME=$FULLNAME"
 
 # remove created ssh-config
 rm ~/.ssh/new
