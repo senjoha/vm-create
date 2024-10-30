@@ -2,7 +2,6 @@
 
 # set env-variables to work with
 VMNAME=$1
-FULLNAME=$VMNAME".iede.senjoha.org"
 TMP_VMID=$2
 VMID=$(( $TMP_VMID + 100 ))
 
@@ -32,11 +31,6 @@ sleep 5
 # run initial ansible-playbook (other repo)
 ansible-playbook ~/Ansible/initial.yml -i ./new
 
-# create prometheus config file
-#echo '[{"labels": {"job": "node"}, "targets": ["$FULLNAME:9100"]}]' | ssh prometheus -l root -T "cat > /etc/prometheus/generated/$FULLNAME.json"
-#ansible-playbook ~/Ansible/node-exporter.yml --extra-vars "FULLNAME=$FULLNAME"
-
-# remove created ssh-config
 rm ~/.ssh/new
 
 # remove ansible hosts file
@@ -44,7 +38,6 @@ rm ./new
 
 # unset variables
 unset VMNAME
-unset FULLNAME
 unset TMP_VMID
 unset VMID
 
