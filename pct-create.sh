@@ -1,7 +1,7 @@
 #!/bin/bash
 VMNAME=$1
 VMID=$2
-TEMPLATE=local:vztmpl/debian-12-standard_12.2-1_amd64.tar.zst
+TEMPLATE=local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst
 
 pvesm alloc local-lvm $VMID vm-$VMID-disk-0 8G
 mkfs.ext4 $(pvesm path local-lvm:vm-$VMID-disk-0) -E root_owner=100000:100000
